@@ -8,7 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SearchPipe } from './pipes/search.pipe';
+import { EditModalPageModule } from './pages/contacts/contact-details/edit-modal/edit-modal.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Contacts } from '@ionic-native/contacts/ngx';
 
 
 @NgModule({
@@ -18,11 +20,15 @@ import { SearchPipe } from './pipes/search.pipe';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    EditModalPageModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Contacts,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
